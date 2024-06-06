@@ -67,4 +67,8 @@ Validate that the cluster is ready.
 kops validate cluster --name=k8s-cluster.example.com --state=s3://<your-s3-bucket>
 ```
 
+Here is the example of expected above command output:
+
+![image](https://github.com/Divya4242/Kops-Kubernetes/assets/113757574/adc2d923-f7f0-44f2-a916-7f44a41bedad)
+
 This `README.md` provides clear, concise instructions and references for setting up a Kubernetes cluster using Kops on AWS. Adjust the placeholders to fit your specific configurations and ensure that all steps are followed accurately for a successful setup.
