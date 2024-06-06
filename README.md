@@ -71,4 +71,38 @@ Here is the example of expected above command output:
 
 ![image](https://github.com/Divya4242/Kops-Kubernetes/assets/113757574/adc2d923-f7f0-44f2-a916-7f44a41bedad)
 
+### 11. Deploy Your Application
+
+Once the cluster is ready, follow these steps to deploy your application:
+
+1. Clone the repository using the following command:
+    ```sh
+    git clone <repository-url>
+    ```
+
+2. Change directory to the cloned repository:
+    ```sh
+    cd <repository-directory>
+    ```
+
+3. Apply the backend deployment configuration:
+    ```sh
+    kubectl apply -f backend-deployment.yaml
+    ```
+
+4. Apply the backend service configuration:
+    ```sh
+    kubectl apply -f backend-service.yaml
+    ```
+
+5. Apply the frontend deployment configuration:
+    ```sh
+    kubectl apply -f frontend-deployment.yaml
+    ```
+
+6. Apply the frontend service configuration:
+    ```sh
+    kubectl apply -f frontend-service.yaml
+    ```
+
 This `README.md` provides clear, concise instructions and references for setting up a Kubernetes cluster using Kops on AWS. Adjust the placeholders to fit your specific configurations and ensure that all steps are followed accurately for a successful setup.
