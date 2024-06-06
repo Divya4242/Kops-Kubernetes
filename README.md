@@ -16,7 +16,7 @@ Launch an EC2 instance with the `t2.micro` instance type. You can either create 
 
 ### 2. Install Kops
 
-SSH into your EC2 instance and install Kops. Follow the installation instructions from the official Kops documentation [here](https://kops.sigs.k8s.io/getting_started/install/).
+SSH into your EC2 and install Kops. Follow the installation instructions from the official Kops documentation [here](https://kops.sigs.k8s.io/getting_started/install/).
 
 ### 3. Update the System
 
@@ -26,27 +26,23 @@ Update the system packages.
 sudo apt update -y
 ```
 
-### 4. Create IAM Role
+### 4. Create IAM Role and Attach it to EC2
 
-Create an IAM role with necessary permissions and programmatic access. Attaching AdministratorAccess is recommended for simplicity.
+Create an IAM role with necessary permissions and programmatic access. Attaching **AdministratorAccess** is recommended for simplicity. Attach the IAM role to your EC2 instance.
 
-### 5. Attach IAM Role to EC2 Instance
-
-Attach the IAM role created in the previous step to your EC2 instance.
-
-### 6. Create an S3 Bucket
+### 5. Create an S3 Bucket
 
 Create an S3 bucket which will be used by Kops to store cluster state information.
 
-### 7. Create a Hosted Zone in Route53
+### 6. Create a Hosted Zone in Route53
 
 Create a hosted zone in Route53. If you already have a hosted zone, you can skip this step.
 
-### 8. Install kubectl
+### 7. Install kubectl
 
 Install kubectl by following the instructions [here](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/).
 
-### 9. Create the Cluster
+### 8. Create the Cluster
 
 Run the following command to create your cluster. Update the placeholders with your specific values.
 
@@ -54,7 +50,7 @@ Run the following command to create your cluster. Update the placeholders with y
 kops create cluster --name=k8s-cluster.example.com --state=s3://<your-s3-bucket> --zones=<your-availability-zone> --node-count=1 --node-size=t2.medium --control-plane-size=t2.medium --dns-zone=<your-domain>
 ```
 
-### 10. Update and Apply the Cluster Configuration
+### 9. Update and Apply the Cluster Configuration
 
 The previous command generates a preview of all the resources Kops will create. If the preview looks good, run the following command to create the resources. (Same like terraform plan(9th step) and terraform apply(10th step))
 
@@ -63,7 +59,7 @@ kops update cluster --name=k8s-cluster.example.com--yes --admin --state=s3://<yo
 ```
 This process may take 5-10 minutes.
 
-### 11. Validate the Cluster
+### 10. Validate the Cluster
 
 Validate that the cluster is ready.
 
