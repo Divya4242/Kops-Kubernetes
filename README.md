@@ -77,12 +77,12 @@ Once the cluster is ready, follow these steps to deploy your application:
 
 1. Clone the repository using the following command:
     ```sh
-    git clone <repository-url>
+    git clone https://github.com/Divya4242/k8s-aws-kops-ingress.git
     ```
 
 2. Change directory to the cloned repository:
     ```sh
-    cd <repository-directory>
+    cd k8s-aws-kops-ingress
     ```
 
 3. Apply the backend deployment configuration:
