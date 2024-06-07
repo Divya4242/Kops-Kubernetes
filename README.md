@@ -163,10 +163,21 @@ Add a CNAME record in Route 53 to point to the Load Balancer DNS name:
 
 1. Go to Route 53 and select your hosted zone.
 2. Add a new record:
+   
     • Name: The record name specified in your ingress-resource.yaml file.
+
     • Type: CNAME.
+
     • Value: The DNS name of the AWS Load Balancer.
 
 ![image](https://github.com/Divya4242/Kops-Kubernetes/assets/113757574/23899d31-b70e-4634-9b5b-3a0efb14932b)
 
-This `README.md` provides clear, concise instructions and references for setting up a Kubernetes cluster using Kops on AWS. Adjust the placeholders to fit your specific configurations and ensure that all steps are followed accurately for a successful setup.
+### Conclusion
+By following these steps, you will have set up a Kubernetes cluster on AWS with Kops, deployed your application, and configured NGINX Ingress for external access via Route 53.
+
+### Troubleshooting
+If you encounter an error such as: $${\color{red}error:}$$  You must be logged in to the server (the server has asked for the client to provide credentials)
+Run the following command to refresh your Kubernetes configuration:
+    ```sh
+    kops export kubecfg --admin --state=s3://<your-s3-bucket>
+    ```
