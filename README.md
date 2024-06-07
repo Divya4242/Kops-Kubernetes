@@ -139,4 +139,10 @@ To expose your services using NGINX Ingress Controller, follow these steps:
 
 You should see a namespace named `ingress-nginx`.
 
+### 14. Apply the NGINX Ingress Resource File
+    The **NGINX Ingress Controller** is the runtime component that actively manages traffic, while the **NGINX Ingress Resource File** is a configuration artifact that defines the desired behavior for that traffic within the Kubernetes ecosystem. (same like we deploy nginx web server(nginx ingress controller) for serving content to user and reverse proxy and deployment.conf(nginx ingress resource file) in sites availiable that define the servername, listning port, etc.)
+    ```sh
+    kubectl apply -f ingress-resource.yaml
+    ```
+
 This `README.md` provides clear, concise instructions and references for setting up a Kubernetes cluster using Kops on AWS. Adjust the placeholders to fit your specific configurations and ensure that all steps are followed accurately for a successful setup.
