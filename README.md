@@ -53,7 +53,7 @@ kops create cluster --name=k8s-cluster.example.com --state=s3://<your-s3-bucket>
 
 ### 9. Update and Apply the Cluster Configuration
 
-The previous command generates a preview of all the resources Kops will create. If the preview looks good, run the following command to create the resources. (Same like terraform plan(9th step) and terraform apply(10th step))
+The previous command generates a preview of all the resources Kops will create. If the preview looks good, run the following command to create the resources. (Same like terraform plan(8th step) and terraform apply(9th step))
 
 ```sh
 kops update cluster --name=k8s-cluster.example.com--yes --admin --state=s3://<your-s3-bucket>
@@ -142,17 +142,16 @@ You should see a namespace named `ingress-nginx`.
 
 ### 14. Apply the NGINX Ingress Resource File
    The **NGINX Ingress Controller** is the runtime component that actively manages traffic, while the **NGINX Ingress Resource File** is a configuration artifact that defines the desired behavior for that traffic within the Kubernetes ecosystem. (same like we deploy nginx web server(nginx ingress controller) for serving content to user and reverse proxy and deployment.conf(nginx ingress resource file) in sites availiable that define the servername, listning port, etc.)
-    ```sh
+```sh
     kubectl apply -f ingress-resource.yaml
-    ```
-
+```
 ### 15. Obtain Load Balancer DNS
 To find the DNS name of the Load Balancer:
 
-• Run the following command and look for the EXTERNAL-IP of the ingress-nginx-controller service:
-    ```sh
+• Run the following command and look for the EXTERNAL-IP of the ingress-nginx-controller service:   
+```sh
     kubectl get svc -n ingress-nginx
-    ```
+```
 
  • Alternatively, you can find the Load Balancer DNS name in the AWS Management Console under EC2 -> Load Balancers.
 
@@ -186,6 +185,6 @@ If you encounter an error such as:
 > error: You must be logged in to the server (the server has asked for the client to provide credentials)
 
 Run the following command to refresh your Kubernetes configuration:
-    ```sh
+```sh
     kops export kubecfg --admin --state=s3://<your-s3-bucket>
-    ```
+```
