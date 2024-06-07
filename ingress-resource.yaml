@@ -2,13 +2,13 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: nginx-ingress
-  namespace: default
+  namespace: default   
   annotations:
     kubernetes.io/ingress.class: ingress-nginx
 spec:
   ingressClassName: nginx
   rules:
-    - host: kfrontend.devopswithdivya.me
+    - host: kfrontend.devopswithdivya.me   #YOU CAN CHANGE THIS WITH YOUR DESIRED HOST NAME TO ACCESS THE WEBSITE
       http:
         paths:
           - path: /
@@ -18,7 +18,7 @@ spec:
                 name: frontend-service
                 port:
                   number: 3000
-    - host: kbackend.devopswithdivya.me
+    - host: kbackend.devopswithdivya.me   #YOU CAN CHANGE THIS WITH YOUR DESIRED HOST NAME TO ACCESS THE WEBSITE
       http:
         paths:
           - path: /
