@@ -175,11 +175,18 @@ Cheers! 🎉 You can now access your deployed website.
 
 Open your browser and navigate to your domain or the appropriate service URL. Your application should be live and accessible.
 
-### Conclusion
+
+### 17. Destroy a Kops Cluster
+To completely remove a Kops-managed Kubernetes cluster, execute the following command:
+    ```sh
+     kops delete cluster k8s-cluster.example.com --state=s3://<your-s3-bucket> --yes
+    ```
+
+## Conclusion
 
 By following these steps, you will have set up a Kubernetes cluster on AWS with Kops, deployed your application, and configured NGINX Ingress for external access via Route 53.
 
-### Troubleshooting
+## Troubleshooting
 If you encounter an error such as: 
 > [!NOTE]
 > error: You must be logged in to the server (the server has asked for the client to provide credentials)
