@@ -180,7 +180,7 @@ Open your browser and navigate to your domain or the appropriate service URL. Yo
 To completely remove a Kops-managed Kubernetes cluster, execute the following command:
 
 ```sh
-     kops delete cluster k8s-cluster.example.com --state=s3://<your-s3-bucket> --yes
+kops delete cluster k8s-cluster.example.com --state=s3://<your-s3-bucket> --yes
 ```
 
 ## Conclusion
@@ -194,5 +194,5 @@ If you encounter an error such as:
 
 Run the following command to refresh your Kubernetes configuration:
 ```sh
-    kops export kubecfg --admin --state=s3://<your-s3-bucket>
+kops export kubecfg --admin --state=s3://<your-s3-bucket>
 ```
