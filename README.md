@@ -45,7 +45,7 @@ Install kubectl by following the instructions [here](https://kubernetes.io/docs/
 
 ### 8. Create the Cluster
 
-Run the following command to create your cluster. Update the placeholders with your specific values.
+Run the following command to create your cluster. Update the placeholders with your specific values. Also change the clsuter name that end with your hosted zone name. Ex. kubernetes.myhosteszone.com, kubernetes.mydomain.com, etc... 
 
 ```sh
 kops create cluster --name=k8s-cluster.example.com --state=s3://<your-s3-bucket> --zones=<your-availability-zone> --node-count=1 --node-size=t2.medium --control-plane-size=t2.medium --dns-zone=<your-domain>
