@@ -7,6 +7,6 @@ spec:
     app: react-frontend
   ports:
     - port: 3000
-      targetPort: 3000
+      targetPort: 3000  # this is the pod port, on which actual service is running. This port is defined in deployment
       nodePort: 30006
   type: NodePort
