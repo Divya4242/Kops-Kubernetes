@@ -8,11 +8,11 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: react-frontend
+      app: react-frontend  # Label selector used by the Deployment to manage Pods
   template:
     metadata:
       labels:
-        app: react-frontend
+        app: react-frontend  # Labels applied to the Pods created by the Deployment, Also Used by service to find pod
     spec:
       containers:
       - name: node-backend
