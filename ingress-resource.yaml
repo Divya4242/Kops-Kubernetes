@@ -12,7 +12,7 @@ spec:
       http:
         paths:
           - path: /
-            pathType: Prefix
+            pathType: Prefix        # can be Prefix or exact or mixed --> more info: https://kubernetes.io/docs/concepts/services-networking/ingress/
             backend:
               service:
                 name: frontend-service
